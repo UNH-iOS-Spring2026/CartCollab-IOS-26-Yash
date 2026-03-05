@@ -8,11 +8,42 @@
 import SwiftUI
 
 struct BottomBar: View {
+    let CartView: AnyView
+    let AccountView: AnyView
+    
+    init(CartView: AnyView, AccountView: AnyView) {
+        self.CartView = CartView
+        self.AccountView = AccountView
+        UITabBar.appearance()
+            .barTintColor = .clear
+        UITabBar.appearance()
+            .backgroundColor = .black
+        UITabBar.appearance()
+            .unselectedItemTintColor = .gray
+    }
+    
+    @State var selectedTab: Int = 0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selectedTab) {
+            CartView
+                .tabItem{
+                    Image(systemName: "cart")
+                    Text("Cart")
+                }
+                .tag(0)
+            
+            AccountView
+                .tabItem{
+                    Image(systemName: "person")
+                    Text("Account")
+                }
+                .tag(1)
+        }
+        .tint(.green)
     }
 }
 
 #Preview {
-    BottomBar()
+    BottomBar(CartView: AnyView(CartListView()), AccountView: AnyView(AccountView()))
 }
