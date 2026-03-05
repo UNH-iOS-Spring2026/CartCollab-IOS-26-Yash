@@ -48,15 +48,26 @@ struct SignInView: View {
             .font(.system(size: 14, weight: .medium))
             .foregroundStyle(Color(.BADDAD))
         
-        VStack {
-            title
-            image
-            Spacer()
-            emailField
-            signInButton
-            forgotPassButton
-            Spacer()
-            signUpButton
+        NavigationStack {
+            VStack {
+                title
+                image
+                Spacer()
+                emailField
+                passField
+                signInButton
+                NavigationLink{
+                    ForgotPasswordView()
+                }label: {
+                    forgotPassButton
+                }
+                Spacer()
+                NavigationLink{
+                    SignUpView()
+                }label: {
+                    signUpButton
+                }
+            }
         }
     }
 }
