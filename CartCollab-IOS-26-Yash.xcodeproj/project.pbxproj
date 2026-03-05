@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		59F98B3F2F5911C400977828 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 59F98B3E2F5911BB00977828 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		59F98B222F59115100977828 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		59F98B142F59114F00977828 /* CartCollab-IOS-26-Yash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CartCollab-IOS-26-Yash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F98B212F59115100977828 /* CartCollab-IOS-26-YashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CartCollab-IOS-26-YashTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F98B2B2F59115100977828 /* CartCollab-IOS-26-YashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CartCollab-IOS-26-YashUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F98B3E2F5911BB00977828 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		59F98B0B2F59114F00977828 = {
 			isa = PBXGroup;
 			children = (
+				59F98B3E2F5911BB00977828 /* .gitignore */,
 				59F98B162F59114F00977828 /* CartCollab-IOS-26-Yash */,
 				59F98B242F59115100977828 /* CartCollab-IOS-26-YashTests */,
 				59F98B2E2F59115100977828 /* CartCollab-IOS-26-YashUITests */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F98B3F2F5911C400977828 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
