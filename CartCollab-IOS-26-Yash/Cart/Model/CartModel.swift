@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CardModel: ObservableObject {
+final class CartModel: ObservableObject {
     let id: String
     
     @Published var cartName: String = ""
