@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CartListView: View {
+    
+    @State var presentAddCartView: Bool = false
     @State var carts: [CartModel] = [
         CartModel(id: "1", data: ["cartName" : "Cart 1", "cartCreatedBy" : "Jane Doe", "cartImageId" : "cart.circle"])!,
         CartModel(id: "2", data: ["cartName" : "Cart 2", "cartCreatedBy" : "John Doe", "cartImageId" : "cart.fill"])!,
@@ -24,7 +26,42 @@ struct CartListView: View {
             }
         }
         
-        list
+        let button = VStack{
+            Spacer()
+            HStack{
+                Spacer()
+                Button(action: clickAddCart){
+                    RoundedRectangle(cornerRadius: 25.0)
+                        .fill(.BADDAD)
+                        .frame(width: 75, height: 75)
+                        .overlay(
+                            Label("Add Cart", systemImage: "plus")
+                                .labelStyle(.iconOnly)
+                                .foregroundColor(.white)
+                                .font(.largeTitle),
+                        ).padding()
+                }
+            }
+        }
+        
+        VStack{
+            Text("Cart Colab")
+                .font(.system(size: 50, weight: .bold))
+            
+            ZStack{
+                list
+                button
+            }
+            
+        }.sheet(isPresented: $presentAddCartView){
+            AddCartView()
+                .presentationDetents([.medium, .large])
+        }
+        
+    }
+    
+    private func clickAddCart(){
+        presentAddCartView.toggle()
     }
 }
 
