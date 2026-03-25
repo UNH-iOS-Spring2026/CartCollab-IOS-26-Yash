@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AddCartView: View {
-    
+    @Environment(\.dismiss) var dismiss
+    @Binding var carts : [CartModel]
     @State private var cartName = ""
     @State private var locationName = ""
     @State private var date = Date()
@@ -57,7 +58,7 @@ struct AddCartView: View {
         
         let btnSave =
         Button(action: {
-            //AddCart()
+            AddCart()
         }) {
             Text("Add New Cart")
                 .font(.headline)
@@ -71,7 +72,7 @@ struct AddCartView: View {
         
         let btnCancel =
         Button(action: {
-            //dismiss()
+            dismiss()
         }) {
             Text("Nevermind")
                 .font(.headline)
@@ -99,8 +100,21 @@ struct AddCartView: View {
         }
         
     }
+    
+    private func AddCart(){
+        let newCartData : [String : Any] = [
+            "cartName" : cartName,
+            "locationName" : locationName,
+            "imageId" : "cart.circle",
+            "shoppingDate" : date.timeIntervalSince1970
+        ]
+        
+        carts.append(CartModel(id: "\(carts.count)", data: newCartData)!)
+        
+        dismiss()
+    }
 }
 
 #Preview {
-    AddCartView()
+    AddCartView(carts: .constant([CartModel(id: "")]))
 }
